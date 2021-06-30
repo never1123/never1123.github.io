@@ -172,7 +172,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><h3 id="axios简介"><a href="#axios简介" class="headerlink" title="axios简介"></a>axios简介</h3><p>​     axios是基于promise的HTTP客户端，可以在浏览器（发送Ajax请求）和node.js（发送HTTP请求）环境中运行具有以下特点：</p>
+<ul>
+<li>支持浏览器和node.js</li>
+<li>支持promise</li>
+<li>能拦截请求和响应</li>
+<li>能转换请求和响应数据</li>
+<li>能取消请求</li>
+<li>自动转换JSON数据</li>
+<li>浏览器支持防止CSRF（跨站请求伪造）</li>
+</ul>
+<h4 id="请求响应结果的结构"><a href="#请求响应结果的结构" class="headerlink" title="请求响应结果的结构"></a>请求响应结果的结构</h4><ul>
+<li><p>config配置对象（包含请求类型、url、请求体等）</p>
+<ul>
+<li>请求地址<ul>
+<li>请求类型</li>
+<li>baseurl </li>
+<li>transfromRequest (对响应结果和请求的预处理)</li>
+<li>transfromResponse</li>
+<li>headers(头信息)</li>
+<li>params(设定URL参数)</li>
+<li>data(请求体  格式：对象(会转成json格式字符串进行传送)或字符串（直接传送）)</li>
+<li>timeout(超时时间)</li>
+<li>adapter(适配器 定义请求的适配器 XHR   Http)</li>
+<li>withCredentials:(跨域请求时对cookie的携带)</li>
+<li>proxy(设置代理)</li>
+<li>cancelToken(对AJAX请求做一个取消的设置)</li>
+<li>decompress(对相应结果是否做一个解压（nodejs)）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>data响应体 （格式：对象  是因为axios自动将服务器返回结果进行json解析转成一个对象） </p>
+</li>
+<li><p>headers请求头</p>
+</li>
+<li><p>request  原生的ajax请求对象</p>
+</li>
+<li><p>响应状态码</p>
+</li>
+<li><p>响应的状态字符串</p>
+</li>
+</ul>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>发送ajax请求 axios的返回结果是一个promise对象 </p>
+<p>使用then方法指定它返回成功的回调</p>
+<p>可以使用axios发送请求也可以使用axios对象的方法发送请求</p>
+<h4 id="redux工作流程"><a href="#redux工作流程" class="headerlink" title="redux工作流程"></a>redux工作流程</h4><p>(redux是专门用于做状态管理的js库而不是react的插件库     一般与react配合使用 集中式管理react多个组件<strong>共享</strong>的状态)</p>
+<ol>
+<li>首先用户发出Action</li>
+<li>Store自动调用Reducer 并传入两个参数（ 当前state，Action ）Reducer会返回新的state</li>
+<li>state一旦发生变化Store就会调用监听函数</li>
+<li>监听函数通过 Store.getState()获取改变后的state这时重新渲染View</li>
+</ol>
+
       
 
       
